@@ -19,7 +19,7 @@
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                             <li role="presentation"><a href="report1.php" role="menuitem" tabindex="-1" >ประการโยกย้าย</a></li>
                             <li role="presentation"><a href="report2.php" role="menuitem" tabindex="-1" >การเปลี่ยนชื่อ-สกุล</a></li>
-                            <li role="presentation">.......</li>
+                            <li role="presentation"></li>
                         </ul>
                     </li>
                     <li>
