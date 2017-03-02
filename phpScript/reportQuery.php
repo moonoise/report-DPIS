@@ -1,9 +1,6 @@
 <?php
 include_once 'connect/connect.inc.php';
-
 function report1($requestStartDate,$requestEndDate,$requestPer_type){
-
-
 $per_type = isset($requestPer_type) ? "AND per_personal.per_type = " . $_POST['per_type'] : "";
 $sql      = "SELECT
                                       per_personal.per_cardno,
@@ -33,9 +30,9 @@ $sql      = "SELECT
                                   ON per_positionhis.org_id_3 = per_org3.org_id FULL JOIN
                                       per_prename
                                   ON per_personal.pn_code = per_prename.pn_code WHERE (
-                                      per_positionhis.update_date BETWEEN '$startDate' AND '$endDate') " . $per_type . " ORDER BY update_date DESC";
+                                      per_positionhis.update_date BETWEEN '$requestStartDate' AND '$requestEndDate') " . $per_type . " ORDER BY update_date DESC";
 //  echo $sql;
-$stid = oci_parse($conn, $sql);
+$stid = oci_parse($GLOBALS['conn'], $sql);
 oci_execute($stid);
 
 return $stid;

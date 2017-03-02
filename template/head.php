@@ -26,8 +26,10 @@
         margin: 5px;
 
      }
+     .table > tbody > tr > td,.table > thead:first-child > tr:first-child > td {
+  white-space: nowrap;
+}
  </style>
-
 
 
 </head>
