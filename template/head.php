@@ -11,6 +11,7 @@
       <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/content.css" rel="stylesheet">
     <link rel="stylesheet" href="js/jquery/jquery-ui.css">
+    <link rel="stylesheet"  href="datatables/css/jquery.dataTables.min.css">
 
 <style type="text/css">
 /* Overide css code กำหนดความกว้างของปฏิทินและอื่นๆ */

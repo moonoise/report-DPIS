@@ -5,4 +5,5 @@
  <script src="js/jquery/jqueryui_datepicker_thai.js"></script>
  <script src="js/jquery/jquery.validate.min.js"></script>
  <script src="js/jquery/additional-methods.min.js"></script>
+ <<script src="datatables/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap Core JavaScript -->

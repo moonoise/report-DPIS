@@ -28,3 +28,4 @@ $(".select").validate({
 });
 
 $('.dropdown-toggle').dropdown();
+
