@@ -8,7 +8,7 @@
 <!-- Page Content -->
     <div class="container">
 <p>
-                          <form action="report1.php?page=report1" method="post" class="select">
+                          <form action="report1.php?page=report" method="post" class="select">
                             เลือกประเภทพนักงาน::
                             <select class="per_type" name="per_type">
                               <option value="1">ข้าราชการ</option>
@@ -24,13 +24,14 @@
                           <div id="myshowErrors"></div>
 
 <?php
-//$page = isset($_GET['page']) ? $_GET['page'] : "";
+
 
 if (!empty($_GET['page'])) {
 
     $query = dateYear543($_POST['dateInput1'], $_POST['dateInput2']);
     if (empty($query)) {echo "<span>variable is empty</span>";} else {
         $queryResult = report1($query['startDate'], $query['endDate'], $_POST['per_type']);
+        
     }
 }
 ?>
@@ -56,9 +57,7 @@ if (!empty($_GET['page'])) {
 
 <?php
 if (!empty($queryResult)) {
-    while ($row = oci_fetch_array($queryResult, OCI_ASSOC + OCI_RETURN_NULLS)) {
-
-        //echo print_r(array_keys($row));
+    foreach ($queryResult as $row) {
         echo "<tr>";
         echo " <td>" . $row['PER_CARDNO'] . "</td>";
         echo " <td>" . $row['PN_NAME'] . "</td>";
@@ -75,16 +74,13 @@ if (!empty($queryResult)) {
         echo " <td>" . $row['POH_DOCNO'] . "</td>";
         echo " <td>" . $row['UPDATE_DATE'] . "</td>";
         echo "</tr>";
-
     }
 }
-oci_close($conn);
 ?>
 </tbody>
-</table></div>
-
+</table>
+</div>
     </div>
-
 <?php include_once 'template/footer.php';?>
 <?php include_once 'template/js.php';?>
 <script src="js/report1.js"></script>
